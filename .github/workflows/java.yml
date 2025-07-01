@@ -21,6 +21,7 @@ jobs:
           - 11
           - 11j9
           - 16
+          - 16j9
           - 17
           - 17j9
           - 18
@@ -28,6 +29,7 @@ jobs:
           - 19
           - 19j9
           - 21
+          - 21j9
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-qemu-action@v3
@@ -48,4 +50,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/pterodactyl/yolks:java_${{ matrix.tag }}
+            ghcr.io/craftbuy/yolks:java_${{ matrix.tag }}

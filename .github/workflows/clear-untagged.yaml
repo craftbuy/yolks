@@ -1,0 +1,17 @@
+# https://github.com/marketplace/actions/delete-untagged-ghcr
+name: 'clear-untagged-images'
+on:
+  workflow_dispatch:
+jobs:
+  delete-untagged-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete all owner containers without tags
+        uses: Chizkiyahu/delete-untagged-ghcr-action@v6
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            repository_owner: ${{ github.repository_owner }}
+            repository: ${{ github.repository }}
+            untagged_only: true
+            package_name: yolks, installers
+            owner_type: user # or org
