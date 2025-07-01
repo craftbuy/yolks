@@ -47,7 +47,8 @@ jobs:
         with:
           context: ./java
           file: ./java/${{ matrix.tag }}/Dockerfile
-          platforms: linux/amd64,linux/arm64
+          #platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: |
             ghcr.io/craftbuy/yolks:java_${{ matrix.tag }}
